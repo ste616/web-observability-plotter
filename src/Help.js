@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, Card } from "react-bootstrap";
+import { useAccordionToggle } from "react-bootstrap/AccordionToggle";
 
 export default function(props) {
+  const [toggleOpened, setToggleOpened] = useState(-1);
+
+  const CustomToggle = function(props) {
+    const clickHandler = useAccordionToggle(props.eventKey, e => {
+      if (props.eventKey === toggleOpened) {
+        setToggleOpened(-1);
+      } else {
+        setToggleOpened(props.eventKey);
+      }
+    });
+
+    return (
+      <div className="clickme" onClick={clickHandler}>
+        {props.children +
+          " (click to " +
+          (props.eventKey !== toggleOpened ? "show" : "hide") +
+          ")"}
+      </div>
+    );
+  };
+
   return (
-    <Accordion defaultActiveKey="1">
+    <Accordion>
       <Card border="info">
-        <Accordion.Toggle as={Card.Header} eventKey="0">
-          Help Documentation (click to expand)
-        </Accordion.Toggle>
+        <Card.Header>
+          <CustomToggle eventKey="0">Help Documentation</CustomToggle>
+        </Card.Header>
         <Accordion.Collapse eventKey="0">
           <Card.Body>
             <div className="inHelp">
@@ -82,10 +104,16 @@ export default function(props) {
                   calendar popup using the close button at top-right. The page
                   will automatically update to reflect the date you chose.
                 </div>
+                <div>
+                  Alternatively, if you just want to change the date by a couple
+                  of days, you may prefer to use the arrow buttons next to the
+                  date display; these change the date +/- 1 day from the
+                  currently displayed date.
+                </div>
               </div>
               <div>
                 <a name="faq_selecting_location" />
-                <h3>How do I select the observing location?</h3>
+                <h5>How do I select the observing location?</h5>
                 <div>
                   On the top right-hand corner of the page you will see a
                   hamburger icon (&equiv;); clicking this will open the
@@ -97,7 +125,7 @@ export default function(props) {
               </div>
               <div>
                 <a name="faq_selecting_twilight_elevation" />
-                <h3>How do I change the sun rise angle?</h3>
+                <h5>How do I change the sun rise angle?</h5>
                 <div>
                   On the top right-hand corner of the page you will see a
                   hamburger icon (&equiv;); clicking this will open the
@@ -120,7 +148,7 @@ export default function(props) {
               </div>
               <div>
                 <a name="faq_elevation_indicators" />
-                <h3>How do I change which elevation markers are shown?</h3>
+                <h5>How do I change which elevation markers are shown?</h5>
                 <div>
                   On the top right-hand corner of the page you will see a
                   hamburger icon (&equiv;); clicking this will open the
@@ -243,12 +271,15 @@ export default function(props) {
         </Accordion.Collapse>
       </Card>
       <Card border="info">
-        <Accordion.Toggle as={Card.Header} eventKey="1">
-          Changelog (click to expand)
-        </Accordion.Toggle>
+        <Card.Header>
+          <CustomToggle eventKey="1">Changelog</CustomToggle>
+        </Card.Header>
         <Accordion.Collapse eventKey="1">
           <Card.Body>
             <div className="inHelp">
+              <div>
+                <b>2020-January-21</b>: Initial release.
+              </div>
               <div>
                 <b>Web Observability Plotter</b>: a convenient interactive
                 interface to calculate when astronomical sources are visible to
@@ -276,7 +307,13 @@ export default function(props) {
                 </a>
                 .
               </div>
-              <div>Source code for this application can be found at</div>
+              <div>
+                Source code for this application can be found at{" "}
+                <a href="https://github.com/ste616/web-observability-plotter">
+                  GitHub
+                </a>
+                .
+              </div>
             </div>
           </Card.Body>
         </Accordion.Collapse>
