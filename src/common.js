@@ -84,7 +84,7 @@ const decimalToSexagesimal = function(d, showSeconds, isHours) {
     d = degreesBounds(d);
   }
   const p1 = Math.floor(d);
-  d -= h;
+  d -= p1;
   const p2 = Math.floor(d * 60);
   d -= p2 / 60;
   const p3 = Math.floor(d * 3600);
