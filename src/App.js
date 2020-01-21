@@ -138,7 +138,6 @@ export default function App(props) {
     elevationDisplays
   ]);
 
-  console.log("how many times");
   return (
     <RequestProvider value={axiosInstance}>
       <div id="layout">
