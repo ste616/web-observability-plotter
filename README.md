@@ -11,3 +11,10 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program. If not, see https://www.gnu.org/licenses/.
 
 Created with CodeSandbox
+
+This is deployed in two places:
+
+https://astrowebservices.com/web_observability_plotter/
+
+https://www.narrabri.atnf.csiro.au/observing/web_observability_plotter/
+
