@@ -1,0 +1,252 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+body {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
+.modalButton {
+  width: 100%;
+}
+#dateSelection {
+  border: 2px solid orange;
+}
+#optionsArea {
+  border: 2px solid blue;
+}
+#plottingArea {
+  border: 2px solid black;
+}
+#myDrawing {
+  border: 2px solid red;
+  width: 98%;
+  height: 100%;
+  margin: 1em 1em;
+}
+#sourceButtons {
+  border: 2px solid green;
+}
+#sourceCheck {
+  border: 2px solid pink;
+  display: none;
+}
+.selectedDate {
+  display: inline;
+  font-weight: bold;
+  margin-left: 1em;
+}
+.modalHeader {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  padding: 1px;
+  height: 30px;
+  line-height: 25px;
+}
+.modalHeader > .title {
+  width: 90%;
+  vertical-align: middle;
+  margin: 0px auto;
+}
+.modalHeader > .closer {
+  float: right;
+  font-size: 2em;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+  cursor: pointer;
+}
+.sourceAddTable th {
+  text-align: right;
+}
+.inSidebar table tr.sourceManageSelected > td,
+.inSidebar table tr.sourceManageSelected > th {
+  background-color: #f5b041;
+}
+.sourceManageTable {
+  text-align: center;
+}
+.smallModal {
+  max-height: 90%;
+}
+.popup-content {
+  max-height: 90%;
+}
+.halfWidthButton {
+  width: 48%;
+}
+.inSidebar {
+  padding: 1rem;
+}
+h3.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 100%;
+  margin: 1.2rem auto;
+}
+.inSidebar table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #aaaaaa;
+  -webkit-box-shadow: 12px 10px 4px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 12px 10px 4px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 12px 10px 4px -3px rgba(0, 0, 0, 0.75);
+  margin-bottom: 20px;
+}
+.inSidebar table td,
+.inSidebar table th {
+  padding-left: 4px;
+  padding-right: 8px;
+  background-color: white;
+}
+input[type="text"] {
+  border: 0;
+  border-bottom: 2px solid #888888;
+  width: 90%;
+  background: transparent;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  font-size: 0.9em;
+  box-sizing: border-box;
+  outline: none;
+}
+input[type="text"]:focus {
+  border: 0;
+  border-bottom: 2px solid #444444;
+}
+input[type="text"].changedInput {
+  border-bottom: 4px solid red;
+}
+select {
+  width: 90%;
+  box-sizing: border-box;
+  font-size: 0.9em;
+  padding: 0.3rem;
+  border: none;
+  outline: none;
+  background-color: #f1f1f1;
+}
+button.actionButtons {
+  box-sizing: border-box;
+  padding: 0.4rem;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  margin: 0.4rem 0.1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+button.actionButtons:hover {
+  background-color: #ffcccc;
+}
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  background-color: #fafafa;
+  border: 1px solid #cacece;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 9px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  outline: none;
+}
+input[type="checkbox"]:active,
+input[type="checkbox"]:checked:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+input[type="checkbox"]:checked {
+  background-color: #e9ecee;
+  border: 1px solid #adb8c0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.5),
+    inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+  color: #99a1a7;
+}
+input[type="checkbox"]:checked:after {
+  content: "\2714";
+  font-size: 14px;
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  color: #99a1a7;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+#addSourceMessageArea,
+#manageSourceMessageArea {
+  text-align: center;
+  padding: 0.3rem 0;
+  visibility: visible;
+  opacity: 1;
+}
+th#addSourceMessageArea.successMessage,
+th#manageSourceMessageArea.successMessage {
+  color: white;
+  background-color: black;
+}
+th#addSourceMessageArea.errorMessage,
+th#manageSourceMessageArea.errorMessage {
+  color: red;
+  background-color: yellow;
+}
+th#addSourceMessageArea.statusMessage,
+th#manageSourceMessageArea.statusMessage {
+  color: white;
+  background-color: #848484;
+  font-style: italic;
+}
+.sourceLister td {
+  padding: 0.3rem;
+}
+div.popup-overlay > div.popup-content {
+  width: auto;
+}
+.btn-primary {
+  background-color: none;
+}
+button > img {
+  vertical-align: initial;
+}
+.react-calendar {
+  width: auto;
+}
+.clickme {
+  cursor: pointer;
+}
+div.inHelp {
+  text-align: left;
+  font-size: 0.9rem;
+}
+div.inHelp div {
+  margin-bottom: 0.4rem;
+}
+.inHelp h1 {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.inHelp h2 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.inHelp h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1e8449;
+}
+.inHelp h5 {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #1a5276;
+  margin-top: 0.3rem;
+  text-decoration: underline;
+}
