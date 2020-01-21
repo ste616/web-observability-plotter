@@ -137,9 +137,19 @@ const DatePicker = function(props) {
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
+  const date1 = function(e) {
+    var n = e.currentTarget.id === "decrementDate" ? -1 : 1;
+    var d = new Date(props.date);
+    d.setDate(d.getDate() + n);
+    props.changeDate(d);
+  };
+
   return (
     <Fragment>
       <div>
+        <Button id="decrementDate" onClick={date1} variant="outline-dark">
+          <span style={{ fontSize: labelSize + "px" }}>&#x2BC7;</span>
+        </Button>
         <Button onClick={handleShow} variant="outline-dark">
           <img
             className="dateIcon"
@@ -151,6 +161,9 @@ const DatePicker = function(props) {
           <span className="selectedDate" style={{ fontSize: labelSize + "px" }}>
             {formatDate(props.date)}
           </span>
+        </Button>
+        <Button id="incrementDate" onClick={date1} variant="outline-dark">
+          <span style={{ fontSize: labelSize + "px" }}>&#x2BC8;</span>
         </Button>
       </div>
       <Modal show={showModal} onHide={handleClose}>

@@ -29,14 +29,14 @@ export default function App(props) {
     "userSources",
     [
       {
-        name: "grb191221b",
+        name: "1934-638",
         specification: {
-          right: 10.322,
-          left: -38.15797,
+          right: "19:39:25.026",
+          left: "-63:42:45.63",
           type: 0
         },
-        rightAscension: 10.322,
-        declination: -38.15797,
+        rightAscension: 19.65695167,
+        declination: -63.712675,
         hidden: false
       }
     ]
