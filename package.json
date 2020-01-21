@@ -4,6 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
+  "homepage": "https://astrowebservices.com/web_observability_plotter",
   "dependencies": {
     "axios": "0.19.1",
     "bootstrap": "4.4.1",
