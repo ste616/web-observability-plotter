@@ -8,6 +8,9 @@ import {
   hoursBounds,
   rad2deg
 } from "./common";
+import leftArrow from "./arrow-left.svg";
+import rightArrow from "./arrow-right.svg";
+import calendarIcon from "./calendar-alt.svg";
 
 const dateDetails = function(state, action) {
   // This class calculates pertinent details about the date
@@ -147,13 +150,14 @@ const DatePicker = function(props) {
   return (
     <Fragment>
       <div>
-        <Button id="decrementDate" onClick={date1} variant="outline-dark">
-          <span style={{ fontSize: labelSize + "px" }}>&#x2BC7;</span>
-        </Button>
+        <button id="decrementDate" onClick={date1} className="flatButton">
+	  <img src={leftArrow} width={calendarSize}
+	    height={calendarSize} alt="Yesterday" />
+        </button>
         <Button onClick={handleShow} variant="outline-dark">
           <img
             className="dateIcon"
-            src="https://astrowebservices.com/images/fntapro/calendar-alt.svg"
+            src={calendarIcon}
             width={calendarSize}
             height={calendarSize}
             alt="Calendar Icon"
@@ -162,9 +166,10 @@ const DatePicker = function(props) {
             {formatDate(props.date)}
           </span>
         </Button>
-        <Button id="incrementDate" onClick={date1} variant="outline-dark">
-          <span style={{ fontSize: labelSize + "px" }}>&#x2BC8;</span>
-        </Button>
+        <button id="incrementDate" onClick={date1} className="flatButton">
+	  <img src={rightArrow} width={calendarSize}
+	    height={calendarSize} alt="Tomorrow" />
+        </button>
       </div>
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>

@@ -250,3 +250,10 @@ div.inHelp div {
   margin-top: 0.3rem;
   text-decoration: underline;
 }
+.flatButton {
+  border: none;
+  background: transparent;
+  position: relative;
+  top: 10px;
+}
+button.flatButton:focus { outline: 0; }
