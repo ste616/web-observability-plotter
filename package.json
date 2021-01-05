@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "homepage": "https://astrowebservices.com/web_observability_plotter",
   "dependencies": {
-    "axios": "0.19.1",
+    "axios": "0.21.1",
     "bootstrap": "4.4.1",
     "jquery": "^3.4.1",
     "konva": "4.1.2",
